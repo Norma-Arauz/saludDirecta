@@ -1,36 +1,44 @@
 import 'package:flutter/material.dart';
+import 'package:saluddirecta_v2/HomePage/Recomend.dart';
 
-class HomePage extends StatefulWidget{
-    const HomePage({super.key});
+class HomePage extends StatelessWidget{
+    const HomePage({Key? key}) : super(key: key);
 
-    @override
-    State<HomePage> createState() => _HomePageState();
-}
-
-  class _HomePageState extends State<HomePage>{
     @override
 
     Widget build(BuildContext context){
-      return Scaffold(
-        body: Column(children: const [
-            Text(
-                'Proxima Cita',
-                style: TextStyle(
-                    color: Colors.black,
-                    fontSize: 16,
-                    fontFamily: 'Open Sans',
-                    fontWeight: FontWeight.w600,
-                    height: 0,
+      return const Scaffold(
+        body: SafeArea(
+            child: SingleChildScrollView(
+              child:Column(
+                children: [
+                  Text(
+                    'Proxima Cita',
+                    style: TextStyle(
+                        color: Colors.black,
+                        fontSize: 16,
+                        fontFamily: 'Open Sans',
+                        fontWeight: FontWeight.w600,
+                        height: 0,
+                    ),
                 ),
-            ),
-            CitaRecor(),
-            Search(),
-      ]
+                SizedBox(
+                  height:15,
+                ),
+                CitaRecor(),
+                SizedBox(
+                  height:25,
+                ),
+                Recomend(),
+        ]
+        ),
+      ),
       ),
       );
     }
-  }
-//REcordario de la proxima cita
+}
+
+  //REcordario de la proxima cita
 class CitaRecor extends StatelessWidget{
 
   const CitaRecor({super.key});
@@ -91,7 +99,7 @@ class CitaRecor extends StatelessWidget{
                               height: 0,
                           ),
                       ),
-                      const SizedBox(height: 4),
+                      const SizedBox(height: 15),
                       Text(
                           'Cardiologa',
                           style: TextStyle(
@@ -195,96 +203,3 @@ class CitaRecor extends StatelessWidget{
     );
     }
   }
-
-//Barra para buscar noticias
-class Search extends StatefulWidget{
-  const Search ({Key? key}): super(key:key);
-
-  @override
-    State<Search> createState() => _SearchBar();
-}
-
-class _SearchBar extends State<Search> {
-
-  //CREACION DE LA LISTA DE NOTICIAS
- /* static List<ListaNotc>  mainNotcList = [
-    ListaNotc("Sistema de salud garantiza mayo bienestar a las familias",2024,
-    "https://www.el19digital.com/app/webroot/tinymce/source/2024/Enero/15-Enero/REPORTAJE/salud-(19).jpeg"),
-     ListaNotc("Avanza la transformacion digital en salud",2022,
-    "https://www.paho.org/sites/default/files/styles/max_1500x1500/public/2022-12/whatsappimage2022-11-23at1334032.jpeg?itok=vEeDxotX"),
-     ListaNotc("17° jornada cientifica de los trabajadores de la salud",2024,
-    "https://www.vivanicaragua.com.ni/contenido/archivos/2024/08/silais-1280x520.jpg"),
-     ListaNotc("Nicaragua Fortalece su atencion clinica para pacientes con autismo",2024,
-    "https://www.tn8.tv/wp-content/uploads/2024/04/2-405.jpg"),
-     ListaNotc("Fortalecimiento de la vigilancia entomológica comunitario",2024,
-    "https://www.paho.org/sites/default/files/styles/max_1500x1500/public/2024-08/chagas2.jpg?itok=48KIhaHw"),
-   /*  ListaNotc("Capacitaciones del personal de salud",2024,
-    "https://100noticias.com.ni/media/cache/2024/04/23/3b/d4/3bd4924baf99145b42a084e6280bf708.jpg?capacitacion-personal-salud-nicaragua"),
-     ListaNotc("Prevencion y control del dengue en Nicaragua",2024,
-    "https://www.paho.org/sites/default/files/dengue2_0.jpg"),*/
-  ];
-
-    List<ListaNotc> display_list = List.from(mainNotcList);
-
-  //ACTUALIZAR LISTA DE NOTCIAS
-  void updateList(String value){
-      setState(() {
-        display_list = mainNotcList.where((element) => element.noticiaTittle!.toLowerCase().contains
-        (value.toLowerCase())).toList();
-      });
-  }
-*/
-  @override
-  Widget build(BuildContext context)
-  {
-    return Container(
-        padding: const EdgeInsets.all(20.0),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-        SizedBox(
-          height: 60,
-          width: 343,
-          ),
-            TextField(
-           // onChanged: (value) => updateList(value),
-            style:TextStyle(color: const Color.fromARGB(255, 29, 132, 216)),
-              decoration:InputDecoration(
-                  filled:true,
-                  fillColor: Colors.white,
-                  border: OutlineInputBorder(
-                    borderRadius:BorderRadius.circular(8.0),
-                    borderSide: BorderSide.none,
-                  ),
-                hintText:"Buscar",
-                prefixIcon: Icon(Icons.search),
-                prefixIconColor: Colors.blue.shade900,
-      ),
-     ),
-      SizedBox(
-        height: 20.0,
-        ),
-    /*  Expanded(
-        child: ListView.builder(
-          itemCount: display_list.length,
-          itemBuilder: (context, index) => ListTile(
-            title: Text(display_list[index].noticiaTittle!,
-            style: TextStyle(
-              color: Colors.black,
-              fontWeight: FontWeight.bold,
-             ),
-            ),
-            subtitle: Text('${display_list[index].year!}',
-            style:TextStyle(
-              color: Colors.black,
-              )
-              ),
-          ),
-        ),
-      ),*/
-    ],
-    ),
-    );
-  }
-}

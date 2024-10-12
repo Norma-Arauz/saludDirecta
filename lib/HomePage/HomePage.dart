@@ -10,30 +10,36 @@ class HomePage extends StatelessWidget{
       return const Scaffold(
         body: SafeArea(
             child: SingleChildScrollView(
+            
               child:Column(
+                mainAxisAlignment: MainAxisAlignment.end,
                 children: [
-                  Text(
+                  const Padding(
+                    padding: EdgeInsets.all(16.0),
+                    child: Text(
                     'Proxima Cita',
-                    style: TextStyle(
-                        color: Colors.black,
-                        fontSize: 16,
-                        fontFamily: 'Open Sans',
-                        fontWeight: FontWeight.w600,
-                        height: 0,
-                    ),
+                      style: TextStyle(
+                          color: Colors.black,
+                          fontSize: 16,
+                          fontFamily: 'Open Sans',
+                          fontWeight: FontWeight.w600,
+                          height: 0,
+                      ),
+                  ),
                 ),
-                SizedBox(
+                const SizedBox(
                   height:15,
                 ),
-                CitaRecor(),
-                SizedBox(
+                const CitaRecor(),
+                const SizedBox(
                   height:25,
                 ),
-                Recomend(),
-        ]
+                const Recomend(),
+        ],
         ),
       ),
       ),
+      
       );
     }
 }
@@ -45,9 +51,7 @@ class CitaRecor extends StatelessWidget{
 
   @override
   Widget build(BuildContext context){
-    return Column(
-      children: [
-      Container(
+    return Container(
         width: 343,
         height: 176,
         padding: const EdgeInsets.all(16),
@@ -56,7 +60,7 @@ class CitaRecor extends StatelessWidget{
             shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(16),
             ),
-        shadows: [
+        shadows: const [
             BoxShadow(
                 color: Color(0x3F000000),
                 blurRadius: 3,
@@ -198,8 +202,6 @@ class CitaRecor extends StatelessWidget{
         ),
     ],
     ),
-)
-      ]
-    );
+);
     }
   }

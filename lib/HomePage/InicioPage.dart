@@ -31,7 +31,7 @@ class _InicioPageState extends State<InicioPage> {
         backgroundColor: Colors.white,
         elevation: 0.0,
       ),
-      body: Container(
+      body: SafeArea(
         child: _page[_selectedTab],
       ),
       bottomNavigationBar: CurvedNavigationBar(

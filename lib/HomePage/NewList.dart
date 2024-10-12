@@ -8,19 +8,17 @@ class NewList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SliverList(
-      delegate: SliverChildBuilderDelegate(
-        (context, i) => NewsListItem(
-          imageAssetPath: newsrItems[1]['imageAssetPath']!,
-          category: newsrItems[1]['category']!,
-          title: newsrItems[1]['title']!,
-          content: newsrItems[1]['content']!,
-          author: newsrItems[1]['author']!,
-          authorImageAssetPath: newsrItems[1]['authorImageAssetPath']!,
-          date: DateTime.parse(newsrItems[1]['date']!),
+    return ListView.builder(
+      itemCount: newsrItems.length,
+        itemBuilder: (context, i) => NewsListItem(
+          imageAssetPath: newsrItems[i]['imageAssetPath']!,
+          category: newsrItems[i]['category']!,
+          title: newsrItems[i]['title']!,
+          content: newsrItems[i]['content']!,
+          author: newsrItems[i]['author']!,
+          authorImageAssetPath: newsrItems[i]['authorImageAssetPath']!,
+          date: DateTime.parse(newsrItems[i]['date']!),
         ),
-        childCount: newsrItems.length,
-      )
-    );
+      );
   }
 }

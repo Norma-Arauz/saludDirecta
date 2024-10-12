@@ -1,6 +1,6 @@
 const newsrItems = [
   {
-    'imageAssetPath': 'assets/not1.jfif',
+    'imageAssetPath': 'assets/not1.jpg',
     'category': 'Sports',
     'author': 'McKindey',
     'authorImageAssetPath': 'assets/images/raster/news_author_1.jpeg',

@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:saluddirecta_v2/SearchPAge/ButtonFast.dart';
 
 
 //Barra para buscar noticias
 class SearchB extends StatefulWidget{
-  const SearchB ({Key? key}): super(key:key);
+  const SearchB ({super.key});
 
   @override
     State<SearchB> createState() => _SearchBar();
@@ -34,11 +35,49 @@ class _SearchBar extends State<SearchB> {
                 prefixIconColor: Colors.blue.shade900,
       ),
     ),
-      SizedBox(
-        height: 20.0,
+      const SizedBox(
+        height: 5,
         ),
     ],
     ),
     );
   }
 }
+
+  class BusquedFast extends StatefulWidget
+  {
+    const BusquedFast({super.key});
+
+    @override
+      State<BusquedFast> createState() => _BusquedFast();
+  }
+
+ //Apartado de buesqueda Rapida
+  class _BusquedFast extends State<BusquedFast> {
+
+    @override
+    Widget build(BuildContext context) {
+      return const Row(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+              //Acceso rapido a doctores
+              ButtonFast(
+                iconImagePath: 'assets/VentanaDoctor.png',
+                buttonText: 'Doctores',
+                ),
+
+              //Acceso rapido Medicamentos
+              ButtonFast(
+                iconImagePath: 'assets/Pildora.png',
+                buttonText: 'Medicina',
+                ),
+
+              //Acceso rapido Centro de salud
+              ButtonFast(
+                iconImagePath: 'assets/CentrodeSalud.png',
+                buttonText: 'Centro\nsalud',
+                ),
+          ],
+        );
+    }
+  }

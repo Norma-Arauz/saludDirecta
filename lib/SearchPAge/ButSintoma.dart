@@ -5,130 +5,111 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:intl/intl.dart';
 
-//Lista de articulos recomendados
-class NewsListItem extends StatelessWidget {
-  final String title;
+class ButSintoma extends StatelessWidget {
+  final String feel;
+  final String textN;
   final String content;
-  final String author;
-  final String category;
-  final String authorImageAssetPath;
   final String imageAssetPath;
-  final DateTime date;
 
-  const NewsListItem({
+  const ButSintoma({
     Key? key,
-    required this.title,
-    required this.author,
-    required this.category,
-    required this.authorImageAssetPath,
-    required this.imageAssetPath,
-    required this.date,
+    required this.feel,
+    required this.textN,
     required this.content,
-  }) : super(key: key);
+    required this.imageAssetPath
+  }): super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
+  return GestureDetector(
       onTap: () {
         Navigator.push(
           context,
           MaterialPageRoute(
-            builder: (context) => SingleNewsItemPage(
-              title: title,
+            builder: (context) => Sintomas(
+              textN: textN,
               content: content,
-              author: author,
-              category: category,
-              authorImageAssetPath: authorImageAssetPath,
               imageAssetPath: imageAssetPath,
-              date: date,
             ),
           ),
         );
       },
-      child: Padding(
-        padding: const EdgeInsets.fromLTRB(10, 0, 0, 16),
-        child: Row(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            ClipRRect(
-              borderRadius: BorderRadius.circular(20),
-              child: Image.asset(
-                imageAssetPath,
-                width: 100,
-                height: 100,
-                fit: BoxFit.cover,
-              ),
-            ),
-            const SizedBox(
-              width: 15,
-            ),
-            Expanded(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  const SizedBox(
-                    height: 5,
-                  ),
-                  Text(
-                    title,
-                    style: Theme.of(context).textTheme.headlineMedium?.copyWith(fontSize: 14),
-                  ),
-                  const SizedBox(
-                    height: 10,
-                  ),
-                  Row(
-                    children: [
-                      CircleAvatar(
-                        backgroundImage: AssetImage(
-                          authorImageAssetPath,
-                        ),
-                        radius: 15,
-                      ),
-                      const SizedBox(
-                        width: 8,
-                      ),
-                      Text(
-                        '$author · ${AppDateFormatters.mdY(date)}',
-                      ),
-                    ],
-                  ),
-                ],
-              ),
-              
-            ),
-          ],
-        ),
+    //child: Padding(
+        //padding: const EdgeInsets.fromLTRB(10, 0, 0, 16),
+    child: Container(
+      height: 50,
+      width: 120,
+      padding: const EdgeInsets.all(10),
+      decoration: BoxDecoration(
+        color: Colors.white,
+        borderRadius: BorderRadius.circular(15),
+        boxShadow: const [
+          BoxShadow(
+              color: Colors.white38,
+              blurRadius: 5,
+              spreadRadius: 0,
+          ),
+        ],
       ),
+    child: Row(
+      mainAxisSize: MainAxisSize.min,
+      mainAxisAlignment: MainAxisAlignment.center,
+      crossAxisAlignment: CrossAxisAlignment.center,
+      children: [
+          Container( //Icono
+            width: 30,
+            height: 30,
+            child: Text(
+              feel,
+              style: const TextStyle(
+                fontSize: 20,
+              ),
+            ),
+          ),
+          const SizedBox(
+            height: 5,
+          ),
+          //Texto
+          Flexible(
+            child: Text(
+              textN,
+              textAlign: TextAlign.center,
+              style: const TextStyle(
+                color: Colors.black,
+                fontSize: 13,
+                fontFamily: 'Montserrat',
+                fontWeight: FontWeight.w600,
+                height: 1.2, // Espaciado entre líneas,
+              ),
+              maxLines: 2,
+              overflow: TextOverflow.ellipsis,
+            ),
+          ),
+      ],
+    ),
+    ),
     );
   }
 }
 
-//Contenedor noticia
-class SingleNewsItemPage extends StatefulWidget {
-  final String title;
+//Contenedor sintoma
+class Sintomas extends StatefulWidget {
+  final String textN;
   final String content;
-  final String author;
-  final String category;
-  final String authorImageAssetPath;
   final String imageAssetPath;
-  final DateTime date;
 
-  const SingleNewsItemPage({
+  const Sintomas({
     super.key,
-    required this.title,
+    required this.textN,
     required this.content,
-    required this.author,
-    required this.category,
-    required this.authorImageAssetPath,
     required this.imageAssetPath,
-    required this.date,
   });
 
   @override
-  State<SingleNewsItemPage> createState() => _SingleNewsItemPageState();
+  State<Sintomas> createState() => _SingleNewsItemPageState();
 }
 
-class _SingleNewsItemPageState extends State<SingleNewsItemPage> {
+class _SingleNewsItemPageState extends State<Sintomas> {
   double _borderRadiusMultiplier = 1;
 
   @override
@@ -140,7 +121,7 @@ class _SingleNewsItemPageState extends State<SingleNewsItemPage> {
       body: CustomScrollView(
         slivers: [
           SliverPersistentHeader(
-            delegate: SingleNewsItemHeaderDelegate(
+            delegate: SintomasD(
               borderRadiusAnimationValue: (value) {
                 WidgetsBinding.instance.addPostFrameCallback((_) {
                   setState(() {
@@ -148,9 +129,7 @@ class _SingleNewsItemPageState extends State<SingleNewsItemPage> {
                   });
                 });
               },
-              title: widget.title,
-              category: widget.category,
-              date: widget.date,
+              textN: widget.textN,
               imageAssetPath: widget.imageAssetPath,
               minExtent: topPadding + 56,
               maxExtent: maxScreenSizeHeight / 2,
@@ -169,13 +148,6 @@ class _SingleNewsItemPageState extends State<SingleNewsItemPage> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(
-                    widget.author,
-                    style: Theme.of(context).textTheme.headlineSmall,
-                  ),
-                  const SizedBox(
-                    height: 20,
-                  ),
                   Text(widget.content),
                 ],
               ),
@@ -186,11 +158,9 @@ class _SingleNewsItemPageState extends State<SingleNewsItemPage> {
     );
   }
 }
-class SingleNewsItemHeaderDelegate extends SliverPersistentHeaderDelegate {
-  final String title;
-  final String category;
+class SintomasD extends SliverPersistentHeaderDelegate {
+  final String textN;
   final String imageAssetPath;
-  final DateTime date;
   final double topPadding;
 
   final Function(double value) borderRadiusAnimationValue;
@@ -200,12 +170,10 @@ class SingleNewsItemHeaderDelegate extends SliverPersistentHeaderDelegate {
   @override
   final double minExtent;
 
-  const SingleNewsItemHeaderDelegate({
+  const SintomasD({
     required this.borderRadiusAnimationValue,
-    required this.title,
-    required this.category,
+    required this.textN,
     required this.imageAssetPath,
-    required this.date,
     required this.maxExtent,
     required this.minExtent,
     required this.topPadding,
@@ -271,26 +239,10 @@ class SingleNewsItemHeaderDelegate extends SliverPersistentHeaderDelegate {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  AnimatedSwitcher(
-                    duration: animationDuration,
-                    child: showCategoryDate
-                        ? Chip(
-                            label: Text( //Categoria
-                              category,
-                              style: const TextStyle(color: Colors.white),
-                            ),
-                            backgroundColor: Theme.of(context).primaryColorDark,
-                          )
-                        : const SizedBox.shrink(),
-                  ),
-                  AnimatedContainer(
-                    duration: animationDuration,
-                    height: showCategoryDate ? 10 : 0,
-                  ),
                   SizedBox( //Titulo
                     width: MediaQuery.of(context).size.width - 40,
                     child: Text(
-                      title,
+                      textN,
                       style: Theme.of(context).textTheme.headlineMedium?.copyWith(
                             fontSize: 30,
                             color: Colors.white,
@@ -301,17 +253,6 @@ class SingleNewsItemHeaderDelegate extends SliverPersistentHeaderDelegate {
                     duration: animationDuration,
                     height: showCategoryDate ? 10 : 0,
                   ),
-                  AnimatedSwitcher(
-                    duration: animationDuration,
-                    child: showCategoryDate
-                        ? Text( //Fecha
-                            AppDateFormatters.mdY(date),
-                            style: Theme.of(context).textTheme.titleSmall?.copyWith(
-                            color: Colors.white,
-                            ),
-                          )
-                        : const SizedBox.shrink(),
-                  )
                 ],
               ),
             ),
@@ -360,7 +301,7 @@ class SingleNewsItemHeaderDelegate extends SliverPersistentHeaderDelegate {
                         duration: animationDuration,
                         crossFadeState: topBarAnimationValue > 0 ? CrossFadeState.showFirst : CrossFadeState.showSecond,
                         secondChild: Text(
-                          title,
+                          textN,
                           style: Theme.of(context).textTheme.headlineSmall?.copyWith(fontSize: 16),
                           maxLines: 1,
                           overflow: TextOverflow.ellipsis,

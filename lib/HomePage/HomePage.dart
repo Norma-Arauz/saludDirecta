@@ -10,7 +10,6 @@ class HomePage extends StatelessWidget{
       return const Scaffold(
         body: SafeArea(
             child: SingleChildScrollView(
-            
               child:Column(
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
@@ -28,11 +27,11 @@ class HomePage extends StatelessWidget{
                   ),
                 ),
                 const SizedBox(
-                  height:15,
+                  height:5,
                 ),
                 const CitaRecor(),
                 const SizedBox(
-                  height:25,
+                  height:5,
                 ),
                 const Recomend(),
         ],

@@ -56,34 +56,29 @@ class _SearchPageState extends State<SearchPage> {
                 ),
                     //Bottom del sintoma
                     Container(
-                      padding: const EdgeInsets.fromLTRB(0,15,20,16),
-                      child: Center(
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
+                      padding: const EdgeInsets.fromLTRB(0,0,0,0),
+                      child: const Column(
+                       // crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                               SizedBox(
-                                    height: 300,
-                                    child: const NewListSint(),
+                                    height: 20,
+                                    child: NewListSint(),
                                   ),
                             ],
                             ),
                       ),
-                    ),
-                    const SizedBox(
-                      width: 10,
-                    ),
                 const SizedBox(
                   height: 15,
                 ),
                 Container(
                 padding: const EdgeInsets.fromLTRB(0,15,20,16),
-                child: Center(
+                child: const Center(
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                         SizedBox(
                               height: 300,
-                              child: const NewList(),
+                              child: NewList(),
                             ),
                       ],
                       ),

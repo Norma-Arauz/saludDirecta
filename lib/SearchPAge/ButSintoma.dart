@@ -3,20 +3,20 @@ import 'dart:ui';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
-import 'package:intl/intl.dart';
 
 class ButSintoma extends StatelessWidget {
-  final String feel;
+  final String imageAssetPath;
+  final String feel;  
   final String textN;
   final String content;
-  final String imageAssetPath;
+
 
   const ButSintoma({
     Key? key,
+    required this.imageAssetPath,
     required this.feel,
     required this.textN,
-    required this.content,
-    required this.imageAssetPath
+    required this.content
   }): super(key: key);
 
   @override
@@ -27,18 +27,17 @@ class ButSintoma extends StatelessWidget {
           context,
           MaterialPageRoute(
             builder: (context) => Sintomas(
+              imageAssetPath: imageAssetPath,
+              feel: feel,
               textN: textN,
               content: content,
-              imageAssetPath: imageAssetPath,
             ),
           ),
         );
       },
-    //child: Padding(
-        //padding: const EdgeInsets.fromLTRB(10, 0, 0, 16),
     child: Container(
-      height: 50,
-      width: 120,
+      width: 160,
+      margin: const EdgeInsets.symmetric(horizontal: 10),
       padding: const EdgeInsets.all(10),
       decoration: BoxDecoration(
         color: Colors.white,
@@ -51,18 +50,16 @@ class ButSintoma extends StatelessWidget {
           ),
         ],
       ),
-    child: Row(
-      mainAxisSize: MainAxisSize.min,
-      mainAxisAlignment: MainAxisAlignment.center,
-      crossAxisAlignment: CrossAxisAlignment.center,
+    child: Column(
+      //crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-          Container( //Icono
-            width: 30,
-            height: 30,
+          SizedBox( //Icono
+            width: 25,
+            height: 50,
             child: Text(
               feel,
               style: const TextStyle(
-                fontSize: 20,
+                fontSize: 25,
               ),
             ),
           ),
@@ -76,7 +73,7 @@ class ButSintoma extends StatelessWidget {
               textAlign: TextAlign.center,
               style: const TextStyle(
                 color: Colors.black,
-                fontSize: 13,
+                fontSize: 16,
                 fontFamily: 'Montserrat',
                 fontWeight: FontWeight.w600,
                 height: 1.2, // Espaciado entre líneas,
@@ -94,22 +91,25 @@ class ButSintoma extends StatelessWidget {
 
 //Contenedor sintoma
 class Sintomas extends StatefulWidget {
+  final String imageAssetPath;
+  final String feel;
   final String textN;
   final String content;
-  final String imageAssetPath;
+
 
   const Sintomas({
     super.key,
+    required this.imageAssetPath,
     required this.textN,
     required this.content,
-    required this.imageAssetPath,
+    required this.feel,
   });
 
   @override
-  State<Sintomas> createState() => _SingleNewsItemPageState();
+  State<Sintomas> createState() =>_NewSintomaState();
 }
 
-class _SingleNewsItemPageState extends State<Sintomas> {
+class _NewSintomaState extends State<Sintomas> {
   double _borderRadiusMultiplier = 1;
 
   @override
@@ -123,11 +123,11 @@ class _SingleNewsItemPageState extends State<Sintomas> {
           SliverPersistentHeader(
             delegate: SintomasD(
               borderRadiusAnimationValue: (value) {
-                WidgetsBinding.instance.addPostFrameCallback((_) {
-                  setState(() {
-                    _borderRadiusMultiplier = value;
-                  });
+              WidgetsBinding.instance.addPostFrameCallback((_) {
+                setState(() {
+                  _borderRadiusMultiplier = value;
                 });
+              });
               },
               textN: widget.textN,
               imageAssetPath: widget.imageAssetPath,
@@ -138,7 +138,7 @@ class _SingleNewsItemPageState extends State<Sintomas> {
             pinned: true,
           ),
           SliverToBoxAdapter(
-            child: AnimatedContainer(   //Contenedor de la noticia completa
+            child: AnimatedContainer(   //Contenedor del sintoma completa
               padding: const EdgeInsets.all(20),
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(40 * _borderRadiusMultiplier),
@@ -159,8 +159,8 @@ class _SingleNewsItemPageState extends State<Sintomas> {
   }
 }
 class SintomasD extends SliverPersistentHeaderDelegate {
-  final String textN;
   final String imageAssetPath;
+  final String textN;
   final double topPadding;
 
   final Function(double value) borderRadiusAnimationValue;
@@ -172,8 +172,8 @@ class SintomasD extends SliverPersistentHeaderDelegate {
 
   const SintomasD({
     required this.borderRadiusAnimationValue,
-    required this.textN,
     required this.imageAssetPath,
+    required this.textN,
     required this.maxExtent,
     required this.minExtent,
     required this.topPadding,
@@ -343,10 +343,6 @@ class SintomasD extends SliverPersistentHeaderDelegate {
 
   @override
   OverScrollHeaderStretchConfiguration get stretchConfiguration => OverScrollHeaderStretchConfiguration();
-}
-
-class AppDateFormatters {
-  static String mdY(DateTime dt) => DateFormat('MMM d,yyyy').format(dt);
 }
 
 //Botones de la barra fija del contenedor de la noticia completa

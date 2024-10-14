@@ -3,19 +3,23 @@ import 'package:saluddirecta_v2/SearchPAge/ButSintoma.dart';
 import 'package:saluddirecta_v2/elementosExt/imag.dart';
 
 class NewListSint extends StatelessWidget {
-  const NewListSint({Key? key}): super (key : key);
+  const NewListSint({super.key});
 
 
   @override
   Widget build(BuildContext context) {
-    return ListView.builder(
-      itemCount: newSint.length,
-        itemBuilder: (context, i) => ButSintoma(
-          imageAssetPath: newSint[i]['imageAssetPath']!,
-          feel: newSint[i]['feel']!,
-          textN: newSint[i]['title']!,
-          content: newSint[i]['content']!,
-      )
+    return Row(
+      children: [
+        ListView.builder(
+            itemCount: newSint.length,
+              itemBuilder: (context, i) => ButSintoma(
+                imageAssetPath: newSint[i]['imageAssetPath']!,
+                feel: newSint[i]['feel']!,
+                textN: newSint[i]['textN']!,
+                content: newSint[i]['content']!,
+            )
+        ),
+      ],
     );
   }
 }

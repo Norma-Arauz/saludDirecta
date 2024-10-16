@@ -22,7 +22,7 @@ class _SearchBar extends State<SearchB> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             TextField(
-            style:TextStyle(color: const Color.fromARGB(255, 29, 132, 216)),
+            style:const TextStyle(color: Color.fromARGB(255, 29, 132, 216)),
               decoration:InputDecoration(
                   filled:true,
                   fillColor: Colors.white,
@@ -31,7 +31,7 @@ class _SearchBar extends State<SearchB> {
                     borderSide: BorderSide.none,
                   ),
                 hintText:"Buscar",
-                prefixIcon: Icon(Icons.search),
+                prefixIcon: const Icon(Icons.search),
                 prefixIconColor: Colors.blue.shade900,
       ),
     ),
@@ -64,18 +64,21 @@ class _SearchBar extends State<SearchB> {
               ButtonFast(
                 iconImagePath: 'assets/VentanaDoctor.png',
                 buttonText: 'Doctores',
+                num: 1,
                 ),
 
               //Acceso rapido Medicamentos
               ButtonFast(
                 iconImagePath: 'assets/Pildora.png',
                 buttonText: 'Medicina',
+                num: 2,
                 ),
 
               //Acceso rapido Centro de salud
               ButtonFast(
                 iconImagePath: 'assets/CentrodeSalud.png',
                 buttonText: 'Centro\nsalud',
+                num: 3,
                 ),
           ],
         );

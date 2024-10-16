@@ -189,3 +189,76 @@ const newSint = [
           No está de más decir que para esto lo mejor es estar acostado, ya que de esta manera la compresa se mantiene en su lugar y solo se remueve cuando va a ser reemplazada por otra.  '''
   },
 ];
+
+const newsNot = [
+  {
+    'imageAssetPath': 'assets/feriaSald.jpg',
+    'category': 'Noticia',
+    'author': 'Minsa',
+    'authorImageAssetPath': 'assets/autor1.jfif',
+    'date': '2024-10-07',
+    'title': 'Mega Feria de Salud Ortopédica en Bilwi atiende a más de 4 mil protagonistas',
+    'content':
+        '''Los días viernes 4 y sábado 5 de octubre, en el Centro Tecnológico “Héroes y Mártires de Puerto Cabezas” en la ciudad de Bilwi, realizamos Mega Feria de Salud Ortopédica que nos permitió atender a más de cuatro mil protagonistas que habitan en los Municipios de Waspam, Puerto Cabezas y Prinzapolka.
+
+          En esta Mega Feria participaron 72 especialistas de todo el País, quienes realizaron 18 cirugías mayores, brindaron atenciones con medicina natural, realizaron infiltraciones, e hicieron Electromiografías y estudios con Rayos X.
+
+          Con la realización de esta Mega Feria de Salud Ortopédica, el Gobierno Revolucionario que presiden el Comandante Daniel Ortega y la Compañera Rosario Murillo, reiteran su compromiso de continuar restituyendo el derecho a la salud de los habitantes de la Costa Caribe nicaragüense.'''
+  },
+  {
+    'imageAssetPath': 'assets/camp.png',
+    'category': 'Noticia',
+    'authorImageAssetPath': 'assets/autor2.jpg',
+    'author': 'Chris',
+    'date': '2024-10-10',
+    'title': 'Campaña “Protegiendo a Nuestra Niñez”',
+    'content':
+        ''' Este lunes 14 de octubre del 2024, iniciaremos Campaña “Protegiendo a Nuestra Niñez” que nos permitirá cuidar la salud de l@s niñ@s de 2 a 16 años de edad, contra enfermedades como el Sarampión, la Rubéola, Parotiditis, Difteria, Tos Ferina, Formas Graves de Tuberculosis, Poliomielitis, Hepatitis “B”, Meningitis Viral, Meningitis Bacteriana, Neumonía Viral, Neumonía Bacteriana, Otitis Bacteriana, Influenza, Diarrea Grave por Rotavirus y el Tétano. Además, entregaremos antiparasitarios.
+
+              Nuestra meta es administrar dos millones de dosis de antiparasitarios y aplicar 170 mil dosis de vacunas, completando los esquemas de vacunación infantil para 2024 en todo el país.
+
+              Nuestro Gobierno Sandinista, los Trabajadores de la Salud y la población nicaragüense, desarrollaremos esta Campaña en las escuelas y a través de visitas casa a casa para garantizar la protección de tod@s nuestr@s niñ@s.'''
+  },
+  {
+    'imageAssetPath': 'assets/HOSPITAL8.jpg',
+    'category': 'Noticia',
+    'authorImageAssetPath': 'assets/autor3.jfif',
+    'author': 'Katerine ',
+    'date': '2024-10-07',
+    'title': 'Hospital Departamental de Nueva Guinea alcanza un 60% de avance en su construcción',
+    'content':
+        ''' La construcción del Hospital Departamental de Nueva Guinea en Zelaya Central ha alcanzado un avance del 60%.
+
+            Esta obra permitirá atender dignamente a más de 323 mil Protagonistas que viven en 305 Comunidades y 76 Barrios de esa Región del País.
+
+            El área de construcción es de 6,850 metros cuadrados, tendrá 7 edificios, con capacidad de 184 camas y dispondrá de 4 quirófanos con Equipos de Última Tecnología, Área de Diagnóstico, Emergencia, Consulta Externa, Hospitalización, Análisis Clínico, Morgue, Servicios Generales, Administración, Auditorio y Bodega.'''
+  },
+  {
+    'imageAssetPath': 'assets/CLEMENTE.jpg',
+    'category': 'Salud',
+    'authorImageAssetPath': 'assets/autor4.jpg',
+    'author': 'John',
+    'date': '2024-09-12',
+    'title': 'Centro Oncológico "Dr. Clemente Guido" brinda atención integral a miles de nicaragüenses',
+    'content':
+        ''' Centenares de Hermanos y Hermanas nicaragüenses reciben diariamente quimioterapias ambulatorias, cuidados para el dolor, atención nutricional y acompañamiento psicológico, en el Centro para atención Oncológica “Dr. Clemente Guido”, en Managua.
+
+            Este “Centro de Vida” funciona desde el 2020 y tiene capacidad para atender simultáneamente cien sesiones de quimioterapias ambulatorias, lo que nos ha permitido cuidar a más de 6,500 personas de todo el País, garantizando más de 54,000 Atenciones Oncológicas.
+
+            A través del Centro de Vida, “Dr. Clemente Guido”, nuestro Gobierno Revolucionario asegura a las y los pacientes de todo el País, el acceso gratuito y de calidad a tratamientos oncológicos.'''
+  },
+  {
+    'imageAssetPath': 'assets/hemo.jpg',
+    'category': 'Salud',
+    'authorImageAssetPath': 'assets/autor4.jpg',
+    'author': 'John',
+    'date': '2024-09-20',
+    'title': 'Centro de Hemodiálisis “Germán Pomares”',
+    'content':
+        ''' Según la vicepresidenta de Nicaragua, Rosario Murillo, la institución sanitaria cuenta con 103 sillones especializados y ofrecerá dos mil sesiones semanales a unos mil pacientes con insuficiencia renal crónica.
+
+            El centro, que contó con una inversión de 67,2 millones de córdobas (más de un millón 829 mil 601 dólares estadounidenses), forma parte de las iniciativas del Ejecutivo sandinista para garantizar atención médica gratuita y de calidad.
+
+            Unidades similares se han inaugurado en años anteriores en otros departamentos de esta nación centroamericana, cuyo objetivo es acercar los servicios de salud a la población que antes se trasladaba hasta la capital del país para recibir atención médica.'''
+  },
+];

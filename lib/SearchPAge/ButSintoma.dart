@@ -6,7 +6,7 @@ import 'package:flutter/rendering.dart';
 
 class ButSintoma extends StatelessWidget {
   final String imageAssetPath;
-  final String feel;  
+  final String feel;
   final String textN;
   final String content;
 
@@ -50,12 +50,12 @@ class ButSintoma extends StatelessWidget {
           ),
         ],
       ),
-    child: Column(
-      //crossAxisAlignment: CrossAxisAlignment.start,
+    child: Row(
+      crossAxisAlignment: CrossAxisAlignment.end,
       children: [
           SizedBox( //Icono
-            width: 25,
-            height: 50,
+            width: 35,
+            height: 35,
             child: Text(
               feel,
               style: const TextStyle(
@@ -64,10 +64,10 @@ class ButSintoma extends StatelessWidget {
             ),
           ),
           const SizedBox(
-            height: 5,
+            width: 0,
           ),
           //Texto
-          Flexible(
+          Expanded(
             child: Text(
               textN,
               textAlign: TextAlign.center,
@@ -76,13 +76,11 @@ class ButSintoma extends StatelessWidget {
                 fontSize: 16,
                 fontFamily: 'Montserrat',
                 fontWeight: FontWeight.w600,
-                height: 1.2, // Espaciado entre líneas,
               ),
-              maxLines: 2,
               overflow: TextOverflow.ellipsis,
             ),
           ),
-      ],
+    ]
     ),
     ),
     );

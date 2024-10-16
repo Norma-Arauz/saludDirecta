@@ -8,9 +8,8 @@ class NewListSint extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      children: [
-        ListView.builder(
+    return ListView.builder(
+            scrollDirection: Axis.horizontal,
             itemCount: newSint.length,
               itemBuilder: (context, i) => ButSintoma(
                 imageAssetPath: newSint[i]['imageAssetPath']!,
@@ -18,8 +17,6 @@ class NewListSint extends StatelessWidget {
                 textN: newSint[i]['textN']!,
                 content: newSint[i]['content']!,
             )
-        ),
-      ],
     );
   }
 }

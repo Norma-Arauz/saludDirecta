@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:saluddirecta_v2/HomePage/NewList.dart';
 import 'package:saluddirecta_v2/SearchPAge/NewListSint.dart';
+import 'package:saluddirecta_v2/SearchPAge/newNot.dart';
 import 'package:saluddirecta_v2/SearchPAge/searchBar.dart';
 
 class SearchPage extends StatefulWidget {
@@ -55,17 +55,9 @@ class _SearchPageState extends State<SearchPage> {
                   ),
                 ),
                     //Bottom del sintoma
-                    Container(
-                      padding: const EdgeInsets.fromLTRB(0,0,0,0),
-                      child: const Column(
-                       // crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                              SizedBox(
-                                    height: 20,
-                                    child: NewListSint(),
-                                  ),
-                            ],
-                            ),
+                  const SizedBox(
+                        height: 50,
+                        child: NewListSint(),
                       ),
                 const SizedBox(
                   height: 15,
@@ -77,8 +69,8 @@ class _SearchPageState extends State<SearchPage> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                         SizedBox(
-                              height: 300,
-                              child: NewList(),
+                              height: 400,
+                              child: NewNot(),
                             ),
                       ],
                       ),

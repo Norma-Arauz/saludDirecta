@@ -41,7 +41,7 @@ class _IdPacientState extends State<IdPacient> {
                     child:Column(
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [  //Texto del inicio
-                        Text(
+                        const Text(
                           'Bienvenido',
                           style: TextStyle(
                             fontSize: 30.0,
@@ -153,7 +153,7 @@ class _IdPacientState extends State<IdPacient> {
                               if(_formSignInKey.currentState!.validate() && rememberPass){
                                 Navigator.push(
                                   context,
-                                MaterialPageRoute(builder: (context)=> InicioPage())
+                                MaterialPageRoute(builder: (context)=> const InicioPage())
                                 );
                               } else if(!rememberPass){ //
                                 ScaffoldMessenger.of(context).showSnackBar(

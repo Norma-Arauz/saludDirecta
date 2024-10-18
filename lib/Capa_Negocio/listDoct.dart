@@ -1,7 +1,7 @@
 
 import 'package:flutter/material.dart';
-import 'package:saluddirecta_v2/SearchPAge/newListDoc.dart';
-import 'package:saluddirecta_v2/SearchPAge/searchBar.dart';
+import 'package:saluddirecta_v2/Capa_Datos/newListDoc.dart';
+import 'package:saluddirecta_v2/Capa_Negocio/searchBar.dart';
 
 class ListDoc extends StatefulWidget {
   const ListDoc({super.key});
@@ -46,8 +46,8 @@ class _ListDocState extends State<ListDoc> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                         SizedBox(
-                              height: 500,
-                              child: NewListDoc(),
+                              height: 600,
+                              child: Newlistdoc(),
                             ),
                       ],
                       ),

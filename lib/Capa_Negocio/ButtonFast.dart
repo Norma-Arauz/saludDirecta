@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:saluddirecta_v2/SearchPAge/listDoct.dart';
-import 'package:saluddirecta_v2/SearchPAge/listMed.dart';
-import 'package:saluddirecta_v2/SearchPAge/listcentroSal.dart';
+import 'package:saluddirecta_v2/Capa_Negocio/listDoct.dart';
+import 'package:saluddirecta_v2/Capa_Negocio/listMed.dart';
+import 'package:saluddirecta_v2/Capa_Presentacion/listcentroSal.dart';
 
 //Botones de opciones de busqueda rapida
 class ButtonFast extends StatelessWidget {

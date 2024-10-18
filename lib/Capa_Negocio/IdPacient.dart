@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:saluddirecta_v2/HomePage/InicioPage.dart';
+import 'package:saluddirecta_v2/Capa_Presentacion/InicioPage.dart';
+
 
 class IdPacient extends StatefulWidget {
   const IdPacient({super.key});

@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:saluddirecta_v2/HomePage/HomePage.dart';
-import 'package:saluddirecta_v2/HomePage/InicioPage.dart';
-import 'package:saluddirecta_v2/InicioPage/InicioSesion.dart';
+import 'package:saluddirecta_v2/Capa_Presentacion/HomePage.dart';
+import 'package:saluddirecta_v2/Capa_Presentacion/InicioPage.dart';
+import 'package:saluddirecta_v2/Capa_Presentacion/InicioSesion.dart';
+
 
 void main() {
   runApp(saludDirecta());

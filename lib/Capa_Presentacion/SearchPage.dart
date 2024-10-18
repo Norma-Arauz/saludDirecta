@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:saluddirecta_v2/SearchPAge/NewListSint.dart';
-import 'package:saluddirecta_v2/SearchPAge/newNot.dart';
-import 'package:saluddirecta_v2/SearchPAge/searchBar.dart';
+import 'package:saluddirecta_v2/Capa_Datos/NewList.dart';
+import 'package:saluddirecta_v2/Capa_Datos/NewListSint.dart';
+import 'package:saluddirecta_v2/Capa_Negocio/searchBar.dart';
+
 
 class SearchPage extends StatefulWidget {
   const SearchPage({super.key});
@@ -70,7 +71,7 @@ class _SearchPageState extends State<SearchPage> {
                     children: [
                         SizedBox(
                               height: 400,
-                              child: NewNot(),
+                              child: NewList(),
                             ),
                       ],
                       ),

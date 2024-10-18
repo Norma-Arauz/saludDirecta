@@ -1,24 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:saluddirecta_v2/elementosExt/newElem.dart';
-
-class NewListDoc extends StatelessWidget {
-  const NewListDoc ({Key? key}): super (key : key);
-
-
-  @override
-  Widget build(BuildContext context) {
-    return ListView.builder(
-      itemCount: listVDoc.length,
-        itemBuilder: (context, i) => Med(
-          imageAssetPath: listVDoc[i]['imageAssetPath']!,
-          nameDoc: listVDoc[i]['nameDoc']!,
-          espec: listVDoc[i]['espec']!,
-          hospital: listVDoc[i]['hospital']!,
-          estado: listVDoc[i]['estado']!,
-        ),
-      );
-  }
-}
 
 //Formato de la lista de doctores que ha consultado
 class Med extends StatelessWidget{

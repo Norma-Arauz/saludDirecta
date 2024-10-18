@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:saluddirecta_v2/HomePage/NewList.dart';
+import 'package:saluddirecta_v2/Capa_Negocio/newNot.dart';
+
 
 class Recomend extends StatefulWidget {
   const Recomend({super.key});
@@ -18,7 +19,7 @@ class _RecomendState extends State<Recomend> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
               const Text(
-              'Recomendaciones',
+              'Noticias',
               style: TextStyle(
                   color: Colors.black,
                   fontSize: 16,
@@ -31,8 +32,8 @@ class _RecomendState extends State<Recomend> {
                 height:25,
               ),
               SizedBox(
-                height: 300,
-                child: const NewList(),
+                height: 400,
+                child: const NewNot(),
               ),
                   ],
                 ),

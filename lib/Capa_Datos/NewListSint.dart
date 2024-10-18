@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:saluddirecta_v2/SearchPAge/ButSintoma.dart';
-import 'package:saluddirecta_v2/elementosExt/imag.dart';
+import 'package:saluddirecta_v2/Capa_Datos/imag.dart';
+import 'package:saluddirecta_v2/Capa_Negocio/ButSintoma.dart';
+
 
 class NewListSint extends StatelessWidget {
   const NewListSint({super.key});

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:saluddirecta_v2/HomePage/NewListItem.dart';
-import 'package:saluddirecta_v2/elementosExt/imag.dart';
+import 'package:saluddirecta_v2/Capa_Datos/imag.dart';
+import 'package:saluddirecta_v2/Capa_Negocio/NewListItem.dart';
+
 
 class NewNot extends StatelessWidget {
   const NewNot({Key? key}): super (key : key);

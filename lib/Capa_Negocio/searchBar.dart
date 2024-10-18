@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:saluddirecta_v2/SearchPAge/ButtonFast.dart';
+import 'package:saluddirecta_v2/Capa_Negocio/ButtonFast.dart';
+
 
 
 //Barra para buscar noticias

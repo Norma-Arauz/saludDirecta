@@ -1,9 +1,10 @@
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
-import 'package:saluddirecta_v2/CitaPage/CitaPage.dart';
-import 'package:saluddirecta_v2/HomePage/HomePage.dart';
-import 'package:saluddirecta_v2/PerfilPage/PerfilPage.dart';
-import 'package:saluddirecta_v2/SearchPAge/SearchPage.dart';
+import 'package:saluddirecta_v2/Capa_Presentacion/CitaPage.dart';
+import 'package:saluddirecta_v2/Capa_Presentacion/HomePage.dart';
+import 'package:saluddirecta_v2/Capa_Presentacion/PerfilPage.dart';
+import 'package:saluddirecta_v2/Capa_Presentacion/SearchPage.dart';
+
 
 class InicioPage extends StatefulWidget {
   const InicioPage({super.key});
@@ -17,10 +18,10 @@ class _InicioPageState extends State<InicioPage> {
   int _selectedTab = 0;
 
   final List<Widget> _page =[
-    HomePage(),
-    SearchPage(),
-    CitaPage(),
-    PerfilPage(),
+    const HomePage(),
+    const SearchPage(),
+    const CitaPage(),
+    const PerfilPage(),
   ];
 
   @override

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:saluddirecta_v2/HomePage/Recomend.dart';
+import 'package:saluddirecta_v2/Capa_Presentacion/Recomend.dart';
 
 class HomePage extends StatelessWidget{
     const HomePage({Key? key}) : super(key: key);
@@ -33,7 +33,7 @@ class HomePage extends StatelessWidget{
                 const SizedBox(
                   height:5,
                 ),
-                const Recomend(),
+                Recomend(),
         ],
         ),
       ),
